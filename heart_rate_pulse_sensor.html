@@ -66,7 +66,8 @@
 
 <!-- Headers -->
 <header class="w3-container w3-center" style="padding:64px 16px">
-  <h1 class="w3-margin w3-jumbo w3-text-white">About Me and This Site</h1>
+  <h1 class="w3-margin w3-jumbo w3-text-white">Heart Rate Pulse Sensor</h1>
+  <h2 class="w3-margin w3-xxlarge w3-text-white">A Fully Analog Approach (Courtesy to <a href="http://www.mtl.ok.ubc.ca/index.html" target="_blank">Dr. Thomas Johnson</a>)</h2>
 </header>
 
 <!-- Background -->
@@ -157,27 +158,32 @@ function topFunction() {
 <body>
 <div class="w3-container w3-large w3-justify w3-text-white">
     <div class="w3-container w3-margin-top w3-margin-bottom w3-margin-left w3-margin-right"> 	<!-- they are by default 16px -->
-	  <p>Zonghao Li ("Chris" is my English name) received his Bachelor of Applied Science from the University of British Columbia, 
-	  and he is right now a Master of Engineering student at McGill University, both in the Electrical Engineering.
-	  His primary research interests fall on microelectronics, and his research topic right now majorly focuses on 
-	  printed flexible chipless RFID sensing technologies. </p>
+	  <p>An amazing undegraduate microelectronic circuit design project. The object of this design is to detect the heart rate pulse of human beings. 
+	  The design flow is given in <i>Fig. 1</i>.</p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/sensor_design_flow.png" style="width:100%">
+		<caption align="bottom">Fig. 1 Design Flow of the Heart Rate Pulse Sensor</caption>
+	  </div>
+	  <br><br>
+	  
+	  The explanation for the design flow is as follow:
+	  <li>Firts, the "optical sensor" that is formed by a pair of infrared (IR) emitter and receiver is used to attached to the human body to detect the
+	  heart beat rate underneath the skin. It works better if the optical sensor is above the artery (for instance, on the wrist). This optical 
+	  measurement is called <a href="https://en.wikipedia.org/wiki/Photoplethysmogram" target="_blank">photoplethysmography</a> or PPG for short. </li>
+	  
+	  <li>Second, the optical sensor front-end will transmit the heart pulse rate in current mode, therefore a building block that converts the current signal
+	  to voltage signal is required here, which will be achieved by a low-pass transimpedance amplifier (TIA). One may want to obtain better signal conditions 
+	  in terms of magnitude and higher SNR, therefore in this design another high-pass filter with a certain gain is also included to achieve this goal.</li>
+	  
+	  <li>Thirdly, the analog voltage signal is filtered and amplified and passed to a comparator to convert analog signal to digital signal for the analog
+	  back-end processing.</li>
+	  
+	  <li>Finally, the signal exported from the comparator is passed to the monostable multivibrator followed by the LED driver that will flash the LED
+	  if a positive edge is detected by the optical sensor. <li/>
 
-	  <p>This site is just a product of one of my personal hobbies. Meanwhile, I like to keep things organized and manageable, which
-	  can help me to quickly recall what I have learned and what I have done in the past, what and how I feel at present, 
-	  and maybe some thoughtful points regarding the future. These reasons give the birth of this site. </p>
 	  
-	  <p>Here are some guidelines on the use of this website, which depends on who you are and what you are looking for. If you
-	  are a <b>student</b> who would like to know what courseworks, projects, and reseach I have done, you are encouraged to go to 
-	  <b>Projects</b> in the navigation bar, where you might find some useful information, even including the tutorial of 
-	  establishing your own site -- just like this one; if you are a <b>hobbyist</b>, 
-	  you might be interested in both <b>Projects</b> and <b>Miscellaneous</b> sections, and it will be my pleasure to know you,
-	  so you are welcome to contact me though the ways included in the footer; if you are a <b>job recruitment person</b>, 
-	  you are specifically welcome to refer my LinkedIn page, which can be found in the footer as well. 
-	  Alternatively, you can take a look at my detailed CV <a href="docs/CV.pdf" target="_blank"></b>here</b></a>.</p>
-	  
-	  <p>BTW, if you are just curious about my profile picture, please click on those links in the footer and you will find out... 
-	  My email address is (somebody used "li" already...): <p class="w3-container w3-courier">zonghao.lee@gmail.com</p> 
-	  I guess that is pretty much what I want to say, enjoy!</p>
 	  
     </div>
 </div>

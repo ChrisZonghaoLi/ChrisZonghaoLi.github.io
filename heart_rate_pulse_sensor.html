@@ -47,6 +47,11 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 
+<!-- MathML -->
+<head>
+<script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
+</head>
+
 <!-- Navigation -->
 <div class="w3-top">
 <nav class="w3-bar w3-black">
@@ -183,7 +188,23 @@ function topFunction() {
 	  <li>Finally, the signal exported from the comparator is passed to the monostable multivibrator followed by the LED driver that will flash the LED
 	  if a positive edge is detected by the optical sensor. <li/>
 
+	  According to the above steps, the whole heart rate pulse sensor will start with the optical sensing front end firstly.
 	  
+	  <br><br>
+	  <h3 class="w3-xxlarge w3-text-white w3-center">Optical Sensor and Low-pass TIA</h3>
+	  <br>
+	  
+	  <p><i>Fig. 2</i> shows the circuit topology of the optical sensor and low-pass TIA. The optical sensor consists of IR emitter <i>D1</i> and 
+	  IR receiver <i>D2</i> that will be used to attach to the skin and detect the heart rate pulse from the artery through PPG. The signal will be in
+	  current mode, which will be transformed into voltage signal through TIA that has a low-pass response, whose cut-off frequency will be determined
+	  by the feedback resistor <i>R<sub>f</sub></i> and capacitor <i>C<sub>f</sub></i>.
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/tia.png" style="width:100%" align="center">
+		<caption align="bottom">Fig. 2 Optical Sensor and Low-pass TIA</caption>
+	  </div>
+	  <br><br>
 	  
     </div>
 </div>

@@ -164,16 +164,17 @@ function topFunction() {
 <div class="w3-container w3-large w3-justify w3-text-white">
     <div class="w3-container w3-margin-top w3-margin-bottom w3-margin-left w3-margin-right"> 	<!-- they are by default 16px -->
 	  <p>An amazing undegraduate microelectronic circuit design project. The object of this design is to detect the heart rate pulse of human beings. 
-	  The design flow is given in <i>Fig. 1</i>.</p>
+	  The design flow is given in <i>Fig. 1</i>.
+	  </p>
 	  
 	  <br><br>
 	  <div class="w3-container w3-center">
-		<img src="pics/sensor_design_flow.png" style="width:100%">
-		<caption align="bottom">Fig. 1 Design Flow of the Heart Rate Pulse Sensor</caption>
+		<img src="pics/sensor_design_flow.png" style="width:80%">
+		<figcaption>Fig. 1 Design Flow of the Heart Rate Pulse Sensor</figcaption>
 	  </div>
 	  <br><br>
 	  
-	  The explanation for the design flow is as follow:
+	  <p>The explanation for the design flow is as follow:
 	  <li>Firts, the "optical sensor" that is formed by a pair of infrared (IR) emitter and receiver is used to attached to the human body to detect the
 	  heart beat rate underneath the skin. It works better if the optical sensor is above the artery (for instance, on the wrist). This optical 
 	  measurement is called <a href="https://en.wikipedia.org/wiki/Photoplethysmogram" target="_blank">photoplethysmography</a> or PPG for short. </li>
@@ -189,22 +190,58 @@ function topFunction() {
 	  if a positive edge is detected by the optical sensor. <li/>
 
 	  According to the above steps, the whole heart rate pulse sensor will start with the optical sensing front end firstly.
+	  </p>
 	  
-	  <br><br>
-	  <h3 class="w3-xxlarge w3-text-white w3-center">Optical Sensor and Low-pass TIA</h3>
+	  <br>
+	  <h3 class="w3-xxlarge w3-text-white w3-center">Optical Sensor, Low-pass TIA and Signal Conditioning Circuit</h3>
 	  <br>
 	  
 	  <p><i>Fig. 2</i> shows the circuit topology of the optical sensor and low-pass TIA. The optical sensor consists of IR emitter <i>D1</i> and 
 	  IR receiver <i>D2</i> that will be used to attach to the skin and detect the heart rate pulse from the artery through PPG. The signal will be in
 	  current mode, which will be transformed into voltage signal through TIA that has a low-pass response, whose cut-off frequency will be determined
-	  by the feedback resistor <i>R<sub>f</sub></i> and capacitor <i>C<sub>f</sub></i>.
+	  by the feedback resistor <i>Rf</i> and capacitor <i>Cf</i>.</p>
 	  
 	  <br><br>
 	  <div class="w3-container w3-center">
-		<img src="pics/tia.png" style="width:100%" align="center">
-		<caption align="bottom">Fig. 2 Optical Sensor and Low-pass TIA</caption>
+		<img src="pics/tia.png" style="width:70%">
+		<figcaption>Fig. 2 Optical Sensor and Low-pass TIA</figcaption>
 	  </div>
 	  <br><br>
+	  
+	  <p>
+	  The voltage pulse signal is then passed to the signal conditioning circuitry that consists of a active high-pass filter with gain, shown in 
+	  <i>Fig. 3</i>. The DC bias resistors <i>R2</i> and <i>R3</i> set up a voltage divider and establish the analog ground to the
+	  non-inverting amplifier. <i>C1</i> and <i>R1</i> establish the high-pass cutoff frequency; <i>R4</i> and
+	  <i>R5</i> determine the AC signal gain of the filter.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/signal_conditioning.png" style="width:50%">
+		<figcaption>Fig. 3 High-pass Filter with Gain</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>The TIA and signal conditioning circuitries are simulated in LTSpice; you can download the <a href="sims/tia_signal_conditioning.7z" target="_blank"></b>simulaiton file</b></a>
+	  to see the output response, which assumes you have LTSpice installed. </p>
+	  
+	  <br>
+	  <h3 class="w3-xxlarge w3-text-white w3-center">Comparator and Pulse Generator</h3>
+	  <br>
+	  
+	  <p>
+	  In order to generate more readable signal that can more easily reflect the heart beat pulses, it will be desirable to convert analog signal to digital pulses.
+	  Comparator here does this job, functioning as a simple 1-bit ADC, whose topology is given in <i>Fig. 4</i>. The comparator in this design is a bit different to
+	  the genearal comparator as it has a decision-making region bounded by the upper and lower threshold voltages, whose values are determined by <i>R1</i> and <i>R2</i>.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/comparator.png" style="width:50%">
+		<figcaption>Fig. 4 Comparator</figcaption>
+	  </div>
+	  <br><br>
+	  
 	  
     </div>
 </div>

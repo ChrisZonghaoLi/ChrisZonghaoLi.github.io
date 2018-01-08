@@ -232,15 +232,39 @@ function topFunction() {
 	  <p>
 	  In order to generate more readable signal that can more easily reflect the heart beat pulses, it will be desirable to convert analog signal to digital pulses.
 	  Comparator here does this job, functioning as a simple 1-bit ADC, whose topology is given in <i>Fig. 4</i>. The comparator in this design is a bit different to
-	  the genearal comparator as it has a decision-making region bounded by the upper and lower threshold voltages, whose values are determined by <i>R1</i> and <i>R2</i>.
+	  the genearal comparator as it has a decision-making region bounded by the upper and lower threshold voltages, whose values are determined by <i>R8</i> and <i>R9</i>.
 	  </p>
 	  
 	  <br><br>
 	  <div class="w3-container w3-center">
 		<img src="pics/comparator.png" style="width:50%">
-		<figcaption>Fig. 4 Comparator</figcaption>
+		<figcaption>Fig. 4 Comparator (Schmitt Trigger)</figcaption>
 	  </div>
 	  <br><br>
+	  
+	  <p>
+	  The comparator like this is sometimes also called Schmitt Trigger. Its voltage-transfer-characteristic (VTC) plot is given in <i>Fig. 4</i>. Here, <i>Vref</i> is
+	  the reference voltage that sets the mid-point of the decision region; <i>VTH</i> is the upper bound, and <i>VTL</i> is the lower bound. As one can see, the reference
+	  voltage is usually set as the mid-point of the DC voltage supply. The way to solve <i>R8</i> and <i>R9</i>, can be easily done through KCL rule, namely when <i>Vo2</i>
+	  equals to <i>VTL</i> for instance, there is:</p>
+	  
+	  <li>
+	  (Vref2-VTL)/R8 = (Vo3-Vref2)/R9
+	  </li>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/vtc.png" style="width:40%">
+		<figcaption>Fig. 5 VTC of Schmitt Trigger</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>
+	  It is also important to select appropriate hysterisis band (decision region) of the Schmitt Trigger that determins the values of <i>VTH</i> and <i>VTL</i>.
+	  </p>
+	  
+	  The pulse generator consists of a edge-trigger circuit that is essentially a RC-differentiator (I encourage you to see <a href="http://www.electronics-tutorials.ws/rc/rc_2.html">
+	  here</a> for more details on RC differentiator/integrator, and RL differentiator/integrator) together with a diode as a rectifier.  
 	  
 	  
     </div>

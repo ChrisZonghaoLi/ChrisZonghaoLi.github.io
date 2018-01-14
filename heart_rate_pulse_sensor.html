@@ -263,8 +263,23 @@ function topFunction() {
 	  It is also important to select appropriate hysterisis band (decision region) of the Schmitt Trigger that determins the values of <i>VTH</i> and <i>VTL</i>.
 	  </p>
 	  
-	  The pulse generator consists of a edge-trigger circuit that is essentially a RC-differentiator (I encourage you to see <a href="http://www.electronics-tutorials.ws/rc/rc_2.html">
-	  here</a> for more details on RC differentiator/integrator, and RL differentiator/integrator) together with a diode as a rectifier.  
+	  <p>
+	  The pulse generator consists of a edge-trigger circuit that is essentially a RC-differentiator (I encourage you to see <a href="http://www.electronics-tutorials.ws/rc/rc-differentiator.html">
+	  here</a> for more details on RC differentiator/integrator, and RL differentiator/integrator) together with a diode as a rectifier. Then the edge-triggered signal is passed
+	  to a monostable multivibrator followed by a LED driver as the visible heart pulse indicator, which will blink one an edge is detected from the optical sensor front-end.
+	  The whole module is provided in <i>Fig. 6</i>.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/pulse_generator.png" style="width:90%">
+		<figcaption>Fig. 6 Pulse Generator</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>
+	  Specific explanations here will be given to the monostable multivibrator. 
+	  </p>
 	  
 	  
     </div>

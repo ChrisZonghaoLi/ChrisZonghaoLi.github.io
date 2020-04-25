@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<title>Zonghao Li's Site</title>
+<meta charset="UTF-8">
+<!-- I comment out the rescaling of the webpage as it looks kinda ugly to me... -->
+<!-- https://www.w3schools.com/html/html_responsive.asp -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<link rel="stylesheet" href="w3.css">
+
+<!-- icon for social media -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+<style>
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.5;
+}
+
+.fa-facebook {
+  background: black;
+  color: white;
+}
+
+.fa-linkedin {
+  background: black;
+  color: white;
+}
+
+.fa-google {
+  background: black;
+  color: white;
+}
+
+.fa-github {
+  background: black;
+  color: white;
+}
+</style>
+
+<!-- Favicon.ico -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<!-- MathML -->
+<head>
+<script src="http://fred-wang.github.io/mathjax.js/mpadded-min.js"></script>
+</head>
+
+<!-- Navigation -->
+<div class="w3-top">
+<nav class="w3-bar w3-black">
+  <a href="http://www.zonghaoli.com" class="w3-button w3-bar-item">Home</a>
+  
+  <div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Projects</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="make_your_own_site.html" class="w3-bar-item w3-button w3-black">Make Your Own Site</a>
+		  <a href="heart_rate_pulse_sensor.html" class="w3-bar-item w3-button w3-black">Heart Rate Pulse Sensor</a>
+		  <a href="capstone_project.html" class="w3-bar-item w3-button w3-black">Human Body Motion Tracking</a>
+		  <a href="1-bit_adc.html" class="w3-bar-item w3-button w3-black">1-bit Analog-to-Digital Converter</a>
+		</div>
+  </div>
+
+  <div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Miscellaneous</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="electrical_engineering_FAQ.html" class="w3-bar-item w3-button w3-black">Electrical Engineering FAQ</a>
+		  <a href="guitar_tricks.html" class="w3-bar-item w3-button w3-black">Guitar Tricks</a>
+		</div>
+  </div>
+  
+  <a href="about.html" class="w3-button w3-bar-item">About</a>
+</nav>
+</div>
+
+<!-- Headers -->
+<header class="w3-container w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo w3-text-white">Heart Rate Pulse Sensor</h1>
+  <h2 class="w3-margin w3-xxlarge w3-text-white">A Fully Analog Approach (Courtesy to <a href="http://www.mtl.ok.ubc.ca/index.html" target="_blank">Dr. Thomas Johnson</a>)</h2>
+</header>
+
+<!-- Background -->
+<style>
+html { 
+  background: url(pics/background4.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+
+<!-- Footer -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="footer">
+	<a href="https://www.facebook.com/chriszonghaoli" class="fa fa-facebook" target="_blank"></a>
+	<a href="https://www.linkedin.com/in/chriszonghaoli" class="fa fa-linkedin" target="_blank"</a>
+	<a href="https://plus.google.com/u/0/+ZonghaoLi" class="fa fa-google" target="_blank"></a>
+	<a href="https://github.com/ChrisZonghaoLi" class="fa fa-github" target="_blank"></a>
+</div>
+
+<!-- Courier text font -->
+<style>
+.w3-courier {
+    font-family: "Courier", cursive, sans-serif;
+}
+</style>
+
+<!-- "Go to top" function -->
+<head>
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: grey;
+}
+</style>
+</head>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+
+<!-- main body -->
+<body>
+<div class="w3-container w3-large w3-justify w3-text-white">
+    <div class="w3-container w3-margin-top w3-margin-bottom"> 	<!-- they are by default 16px -->
+	  <p>An amazing undegraduate microelectronic circuit design project. The object of this design is to detect the heart rate pulse of human beings. 
+	  The design flow is given in <i>Fig. 1</i>.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/sensor_design_flow.png" style="width:50%">
+		<figcaption>Fig. 1 Design Flow of the Heart Rate Pulse Sensor</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>The explanation for the design flow is as follow:
+	  <li>Firts, the "optical sensor" that is formed by a pair of infrared (IR) emitter and receiver is used to attached to the human body to detect the
+	  heart beat rate underneath the skin. It works better if the optical sensor is above the artery (for instance, on the wrist). This optical 
+	  measurement is called <a href="https://en.wikipedia.org/wiki/Photoplethysmogram" target="_blank">photoplethysmography</a> or PPG for short. </li>
+	  
+	  <li>Second, the optical sensor front-end will transmit the heart pulse rate in current mode, therefore a building block that converts the current signal
+	  to voltage signal is required here, which will be achieved by a low-pass transimpedance amplifier (TIA). One may want to obtain better signal conditions 
+	  in terms of magnitude and higher SNR, therefore in this design another high-pass filter with a certain gain is also included to achieve this goal.</li>
+	  
+	  <li>Thirdly, the analog voltage signal is filtered and amplified and passed to a comparator to convert analog signal to digital signal for the analog
+	  back-end processing.</li>
+	  
+	  <li>Finally, the signal exported from the comparator is passed to the monostable multivibrator followed by the LED driver that will flash the LED
+	  if a positive edge is detected by the optical sensor. <li/>
+
+	  According to the above steps, the whole heart rate pulse sensor will start with the optical sensing front end firstly.
+	  </p>
+	  
+	  <br>
+	  <h3 class="w3-xxlarge w3-text-white w3-center">Optical Sensor, Low-pass TIA and Signal Conditioning Circuit</h3>
+	  <br>
+	  
+	  <p><i>Fig. 2</i> shows the circuit topology of the optical sensor and low-pass TIA. The optical sensor consists of IR emitter <i>D1</i> and 
+	  IR receiver <i>D2</i> that will be used to attach to the skin and detect the heart rate pulse from the artery through PPG. The signal will be in
+	  current mode, which will be transformed into voltage signal through TIA that has a low-pass response, whose cut-off frequency will be determined
+	  by the feedback resistor <i>Rf</i> and capacitor <i>Cf</i>.</p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/tia.png" style="width:50%">
+		<figcaption>Fig. 2 Optical Sensor and Low-pass TIA</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>
+	  The voltage pulse signal is then passed to the signal conditioning circuitry that consists of a active high-pass filter with gain, shown in 
+	  <i>Fig. 3</i>. The DC bias resistors <i>R2</i> and <i>R3</i> set up a voltage divider and establish the analog ground to the
+	  non-inverting amplifier. <i>C1</i> and <i>R1</i> establish the high-pass cutoff frequency; <i>R4</i> and
+	  <i>R5</i> determine the AC signal gain of the filter.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/signal_conditioning.png" style="width:40%">
+		<figcaption>Fig. 3 High-pass Filter with Gain</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>The TIA and signal conditioning circuitries are simulated in LTSpice; you can download the <a href="sims/tia_signal_conditioning.7z" target="_blank"></b>simulaiton file</b></a>
+	  to see the output response, which assumes you have LTSpice installed. </p>
+	  
+	  <br>
+	  <h3 class="w3-xxlarge w3-text-white w3-center">Comparator and Pulse Generator</h3>
+	  <br>
+	  
+	  <p>
+	  In order to generate more readable signal that can more easily reflect the heart beat pulses, it will be desirable to convert analog signal to digital pulses.
+	  Comparator here does this job, functioning as a simple 1-bit ADC, whose topology is given in <i>Fig. 4</i>. The comparator in this design is a bit different to
+	  the genearal comparator as it has a decision-making region bounded by the upper and lower threshold voltages, whose values are determined by <i>R8</i> and <i>R9</i>.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/comparator.png" style="width:30%">
+		<figcaption>Fig. 4 Comparator (Schmitt Trigger)</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>
+	  The comparator like this is sometimes also called Schmitt Trigger. Its voltage-transfer-characteristic (VTC) plot is given in <i>Fig. 4</i>. Here, <i>Vref</i> is
+	  the reference voltage that sets the mid-point of the decision region; <i>VTH</i> is the upper bound, and <i>VTL</i> is the lower bound. As one can see, the reference
+	  voltage is usually set as the mid-point of the DC voltage supply. The way to solve <i>R8</i> and <i>R9</i>, can be easily done through KCL rule, namely when <i>Vo2</i>
+	  equals to <i>VTL</i> for instance, there is:</p>
+	  
+	  <li>
+	  (Vref2-VTL)/R8 = (Vo3-Vref2)/R9
+	  </li>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/vtc.png" style="width:30%">
+		<figcaption>Fig. 5 VTC of Schmitt Trigger</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>
+	  It is also important to select appropriate hysterisis band (decision region) of the Schmitt Trigger that determins the values of <i>VTH</i> and <i>VTL</i>.
+	  </p>
+	  
+	  <p>
+	  The pulse generator consists of a edge-trigger circuit that is essentially a RC-differentiator (I encourage you to see <a href="http://www.electronics-tutorials.ws/rc/rc-differentiator.html">
+	  here</a> for more details on RC differentiator/integrator, and RL differentiator/integrator) together with a diode as a rectifier. Then the edge-triggered signal is passed
+	  to a monostable multivibrator followed by a LED driver as the visible heart pulse indicator, which will blink one an edge is detected from the optical sensor front-end.
+	  The whole module is provided in <i>Fig. 6</i>.
+	  </p>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/pulse_generator.png" style="width:50%">
+		<figcaption>Fig. 6 Pulse Generator</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p>
+	  Specific explanations here will be given to the monostable multivibrator. 
+	  </p>
+	  
+	  
+    </div>
+</div>
+
+
+
+</body>
+</html>
+

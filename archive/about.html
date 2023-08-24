@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<title>Zonghao Li's Site</title>
+<meta charset="UTF-8">
+<!-- I comment out the rescaling of the webpage as it looks kinda ugly to me... -->
+<!-- https://www.w3schools.com/html/html_responsive.asp -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<link rel="stylesheet" href="w3.css">
+
+<!-- icon for social media -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+<style>
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.5;
+}
+
+.fa-facebook {
+  background: black;
+  color: white;
+}
+
+.fa-linkedin {
+  background: black;
+  color: white;
+}
+
+.fa-google {
+  background: black;
+  color: white;
+}
+
+.fa-github {
+  background: black;
+  color: white;
+}
+</style>
+
+<!-- Favicon.ico -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<!-- Navigation -->
+<div class="w3-top">
+<nav class="w3-bar w3-black">
+  <a href="http://www.zonghaoli.com" class="w3-button w3-bar-item">Home</a>
+  
+  <div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Research</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="ml_analog_ic.html" class="w3-bar-item w3-button w3-black">Machine Learning for Analog IC Design</a>	
+		  <a href="optical_receiver.html" class="w3-bar-item w3-button w3-black">High-speed Optical Receiver Modelling</a>
+		  <a href="chipless_rfid.html" class="w3-bar-item w3-button w3-black">Chipless RFID for Wireless Sensing Applications</a>
+		</div>
+  </div>
+  
+	<div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Coursework</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="mixed_signal.html" class="w3-bar-item w3-button w3-black">Mixed Signal Circuits</a>		
+		  <a href="rf_microelectronics.html" class="w3-bar-item w3-button w3-black">RF Microelectronics</a>		
+		  <a href="cnn_accelerator.html" class="w3-bar-item w3-button w3-black">CNN Accelerator</a>		 		  
+		  <a href="1-bit_adc.html" class="w3-bar-item w3-button w3-black">1st-order Delta-Sigma ADC</a>
+		  <a href="capstone_project.html" class="w3-bar-item w3-button w3-black">Human Body Motion Tracking</a>
+		  <a href="heart_rate_pulse_sensor.html" class="w3-bar-item w3-button w3-black">Heart Rate Pulse Sensor</a>
+		  <a href="microwave_amplifier.html" class="w3-bar-item w3-button w3-black">Microwave Amplifier</a>	
+		</div>
+  </div>
+
+  <div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Miscellaneous</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="make_your_own_site.html" class="w3-bar-item w3-button w3-black">Make Your Own Site</a>
+		  <a href="electrical_engineering_FAQ.html" class="w3-bar-item w3-button w3-black">Electrical Engineering FAQ</a>
+		  <a href="guitar_tricks.html" class="w3-bar-item w3-button w3-black">Guitar Tricks</a>
+		</div>
+  </div>
+  
+  <a href="about.html" class="w3-button w3-bar-item">About</a>
+</nav>
+</div>
+
+<!-- Headers -->
+<header class="w3-container w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo w3-text-white">About Me and This Site</h1>
+</header>
+
+<!-- Background -->
+<style>
+html { 
+  background: url(pics/background4.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+
+<!-- Footer -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="footer">
+	<a href="https://www.facebook.com/chriszonghaoli" class="fa fa-facebook" target="_blank"></a>
+	<a href="https://www.linkedin.com/in/chriszonghaoli" class="fa fa-linkedin" target="_blank"</a>
+	<a href="https://plus.google.com/u/0/+ZonghaoLi" class="fa fa-google" target="_blank"></a>
+	<a href="https://github.com/ChrisZonghaoLi" class="fa fa-github" target="_blank"></a>
+</div>
+
+<!-- Courier text font -->
+<style>
+.w3-courier {
+    font-family: "Courier", cursive, sans-serif;
+}
+</style>
+
+<!-- "Go to top" function -->
+<head>
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: grey;
+}
+</style>
+</head>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+
+<!-- main body -->
+<body>
+<div class="w3-container w3-large w3-justify w3-text-white">
+    <div class="w3-container w3-margin-top w3-margin-bottom"> 	<!-- they are by default 16px -->
+	  <p>Zonghao Li ("Chris" is my English name) received his Bachelor of Applied Science from the University of British Columbia, 
+	  and he is right now a Master of Engineering student at McGill University, both in the Electrical Engineering.
+	  His primary research interests fall on microelectronics, and his research topic right now majorly focuses on 
+	  printed flexible chipless RFID sensing technologies. </p>
+
+	  <p>This site is just a product of one of my personal hobbies. Meanwhile, I like to keep things organized and manageable, which
+	  can help me to quickly recall what I have learned and what I have done in the past, what and how I feel at present, 
+	  and maybe some thoughtful points regarding the future. These reasons give the birth of this site. </p>
+	  
+	  <p>Here are some guidelines on the use of this website, which depends on who you are and what you are looking for. If you
+	  are a <b>student</b> who would like to know what courseworks, projects, and reseach I have done, you are encouraged to go to 
+	  <b>Projects</b> in the navigation bar, where you might find some useful information, even including the tutorial of 
+	  establishing your own site -- just like this one; if you are a <b>hobbyist</b>, 
+	  you might be interested in both <b>Projects</b> and <b>Miscellaneous</b> sections, and it will be my pleasure to know you,
+	  so you are welcome to contact me though the ways included in the footer; if you are a <b>job recruitment person</b>, 
+	  you are specifically welcome to refer my LinkedIn page, which can be found in the footer as well. 
+	  Alternatively, you can take a look at my detailed CV <a href="docs/CV.pdf" target="_blank"></b>here</b></a>.</p>
+	  
+	  <p>BTW, if you are just curious about my profile picture, please click on those links in the footer and you will find out... 
+	  My email address is (somebody used "li" already...): <p class="w3-container w3-courier">zonghao.lee@gmail.com</p> 
+	  I guess that is pretty much what I want to say, enjoy!</p>
+	  
+    </div>
+</div>
+
+
+
+</body>
+</html>
+

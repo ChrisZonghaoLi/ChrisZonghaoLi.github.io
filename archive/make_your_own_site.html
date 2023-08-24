@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<title>Zonghao Li's Site</title>
+<meta charset="UTF-8">
+<!-- I comment out the rescaling of the webpage as it looks kinda ugly to me... -->
+<!-- https://www.w3schools.com/html/html_responsive.asp -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<link rel="stylesheet" href="w3.css">
+
+<!-- icon for social media -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+<style>
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.5;
+}
+
+.fa-facebook {
+  background: black;
+  color: white;
+}
+
+.fa-linkedin {
+  background: black;
+  color: white;
+}
+
+.fa-google {
+  background: black;
+  color: white;
+}
+
+.fa-github {
+  background: black;
+  color: white;
+}
+</style>
+
+<!-- Favicon.ico -->
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<!-- Navigation -->
+<div class="w3-top">
+<nav class="w3-bar w3-black">
+  <a href="http://www.zonghaoli.com" class="w3-button w3-bar-item">Home</a>
+  
+  <div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Research</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="ml_analog_ic.html" class="w3-bar-item w3-button w3-black">Machine Learning for Analog IC Design</a>	
+		  <a href="optical_receiver.html" class="w3-bar-item w3-button w3-black">High-speed Optical Receiver Modelling</a>
+		  <a href="chipless_rfid.html" class="w3-bar-item w3-button w3-black">Chipless RFID for Wireless Sensing Applications</a>
+		</div>
+  </div>
+  
+	<div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Coursework</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="mixed_signal.html" class="w3-bar-item w3-button w3-black">Mixed Signal Circuits</a>		
+		  <a href="rf_microelectronics.html" class="w3-bar-item w3-button w3-black">RF Microelectronics</a>		
+		  <a href="cnn_accelerator.html" class="w3-bar-item w3-button w3-black">CNN Accelerator</a>		 		  
+		  <a href="1-bit_adc.html" class="w3-bar-item w3-button w3-black">1st-order Delta-Sigma ADC</a>
+		  <a href="capstone_project.html" class="w3-bar-item w3-button w3-black">Human Body Motion Tracking</a>
+		  <a href="heart_rate_pulse_sensor.html" class="w3-bar-item w3-button w3-black">Heart Rate Pulse Sensor</a>
+		  <a href="microwave_amplifier.html" class="w3-bar-item w3-button w3-black">Microwave Amplifier</a>	
+		</div>
+  </div>
+
+  <div class="w3-dropdown-hover">
+	<button class="w3-button w3-black">Miscellaneous</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+		  <a href="make_your_own_site.html" class="w3-bar-item w3-button w3-black">Make Your Own Site</a>
+		  <a href="electrical_engineering_FAQ.html" class="w3-bar-item w3-button w3-black">Electrical Engineering FAQ</a>
+		  <a href="guitar_tricks.html" class="w3-bar-item w3-button w3-black">Guitar Tricks</a>
+		</div>
+  </div>
+  
+  <a href="about.html" class="w3-button w3-bar-item">About</a>
+</nav>
+</div>
+
+<!-- Headers -->
+<header class="w3-container w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo w3-text-white">Make Your Own Site</h1>
+  <h2 class="w3-margin w3-xxlarge w3-text-white">Creating and Hosting a Website Based on Github Pages</h2>
+</header>
+
+<!-- Background -->
+<style>
+html { 
+  background: url(pics/background4.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+
+<!-- Footer -->
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="footer">
+	<a href="https://www.linkedin.com/in/chriszonghaoli" class="fa fa-linkedin" target="_blank"</a>
+	<a href="https://plus.google.com/u/0/+ZonghaoLi" class="fa fa-google" target="_blank"></a>
+	<a href="https://github.com/ChrisZonghaoLi" class="fa fa-github" target="_blank"></a>
+</div>
+
+<!-- Courier text font -->
+<style>
+.w3-courier {
+    font-family: "Courier", cursive, sans-serif;
+}
+</style>
+
+<!-- "Go to top" function -->
+<head>
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: grey;
+}
+</style>
+</head>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+
+<!-- main body -->
+<body>
+<div class="w3-container w3-large w3-justify w3-text-white">
+    <div class="w3-container w3-margin-top w3-margin-bottom"> 	<!-- they are by default 16px -->
+	  <p>Creating and hosting my own small website is on my to-do list for really a while, which I did not manage to get it started until the 
+	  end of 2017, due to my terrible time management (I guess...) and my life-long unforgetable Christmas holiday (I need to find something 
+	  to do to distract my mind from breaking down with my grilfriend after the 5-year long-distance relationship). Surely, there are countless tutorials 
+	  about building-up your own website from scratch, some of them can be a bit of time-consuming, some of them are just purely over-simplified, or some of them just
+	  do not work... I knew using Github Pages to host personal website and I did found it was extremely efficient, simple, and straightforward. 
+	  I will say if you are NOT a serious website designer/architect, and if are someone like me who just would like to have a personal website
+	  for fun without investing too much time and money on it, this guide might be helpful to you. There are also many other Github Pages
+	  tutorials available on Google, I write this guide is also for my own track, so I will appriciate if you have any suggestions
+	  and feedbacks, and please you are welcome to contact me (see <b>About</b> in the navigation bar for the methods to be in touch with me).</p>
+	  
+	  <li>As this guide is based on Github Pages, you should first have a Github account. Skip this step if you have one.</li>
+	  
+	  <li>If you have your Github account, you can then refer to the offical guide of the Github Pages on how to 
+	  construct your first <font face="courier">Hello World</font> website (click <a href="https://pages.github.com/" target="_blank"></b>here</b></a> for the brief tutorial).</li>
+	  
+	  <li>It is possible (you might spend money for your site on elsewhere which I am not sure...) for you to have a totally free personal website 
+	  if you do NOT want to have a custom domain; your default site domian should be <font face="courier"><i>username</i>.github.io</font>. If you do 
+	  not like it and would like to have your own custom domain, it means you need to buy your own custom domain. You can skip the next step if you do NOT want to do so.</li>
+	  
+	  <li>Skip this step if you do NOT want to buy your own custom domain. There are many places to buy domains, 
+	  the one I bought was from <a href="https://ca.godaddy.com/" target="_blank"></b>GoDaddy</b></a>. Again, you need to have an account before any shopping... Once you do 
+	  so, you can search your desired domain name to see if it is still available. I will generally suggest to use your name as your domain name for your own site, just easier
+	  for people to memorize. The following picture is just an example of using <font face="courier">helloworld1234</font> for the domain name registration search. Usually
+	  uncommon custom domains are very cheap, in this case 7 RMB is about 1.1 USD for one year registration cost. So, why not?</li>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/godaddy.jpg" style="width:50%">
+		<figcaption>Fig. 1 GoDaddy Custom Domain Registration</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <li>Once you have your custom domain registered, you need to do some configurations in order to activate it. These settings will be done in two places to make your 
+	  custom domain function on your website, starting with the configrautions on GoDaddy: go to your personal account and find out "DNS Management" of the custom domian
+	  you just purchased, then you need to add three "Records", which are highlighted in red color (the rest records are generated by the system and should not be touched).
+	  The first two IP addresses, namely <font face="courier">192.30.252.153</font> and <font face="courier">192.30.252.154</font>, are Github Pages addresses, your site IP
+	  address should be one of them, which can be check by using <font face="courier">dig</font> command in your <font face="courier">Linux</font> OS. You can just simply 
+	  add both of these to the records (record type is <font face="courier">A</font>) to avoid confusions. Then you also need to add type <font face="courier">CNAME</font>
+	  record whose value is the default domain name of your Github Pages, namely  <font face="courier"><i>username</i>.github.io</font>. By doing so it tells to point this custom
+	  domain to your Github Pages website. These settings are summarized in <i>Fig. 2.</i></li>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/dns.png" style="width:50%">
+		<figcaption>Fig. 2 GoDaddy DNS Management</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <li>Next, you should do the same <font face="courier">CNAME</font> record settings on your Github Pages repository. Go to its setting and find out the place to
+	  input your custom domain to employ the one you just purchased (see <i>Fig. 3</i>). Done! Now after a while (the changes are not shown immediately) your Github Pages
+	  should be published on your own custom domain. </li>
+	  
+	  <br><br>
+	  <div class="w3-container w3-center">
+		<img src="pics/github_pages.png" style="width:50%">
+		<figcaption>Fig. 3 Github Pages <font face="courier">CNAME</font> Settings</figcaption>
+	  </div>
+	  <br><br>
+	  
+	  <p> If you are curious about the source code of this site, you are welcome to check it on my Github, the link is on the footer. For the further consitructions and improvements 
+	  of your own site, if you are someone who is very new or intermediate on website development, you can 
+	  check <a href="https://www.w3schools.com/" target="_blank"></b>W3Schools</b></a> for helps, which provides excellent resources, examples, tutorials, and templates on 
+	  <font face="courier">html</font>, <font face="courier">CSS</font>, <font face="courier">Javascript</font>, and many other website-related stuff. I personally
+	  recommend <font face="courier">W3.CSS</font>, which is a moderm <font face="courier">CSS</font> library that makes website development more efficient. </p>
+	  
+	  <p>Hope you enjoy creating your own site!</p>
+	  
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
